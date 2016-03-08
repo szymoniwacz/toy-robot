@@ -21,7 +21,7 @@ class Simulator
       @robot.execute(command)
     end
 
-    # surface.visualize(robot)
+    # surface.visualize(@robot)
   end
 
   private
