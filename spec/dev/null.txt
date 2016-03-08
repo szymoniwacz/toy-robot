@@ -1,0 +1,2 @@
+Cannot move there, trying next action.
+Robot final placement: 2,2,NORTH
