@@ -1,4 +1,3 @@
-require_relative 'commands_parser'
 require_relative 'surface'
 require_relative 'robot'
 
