@@ -4,7 +4,7 @@ class CommandsParser
   end
 
   def parse
-    commands = @commands.gsub!(/\n/," ").chomp.split(/\s/)
+    commands = @commands.chomp.split(/\s/)
     parsed_commands = []
     commands.each_with_index do |command, index|
       cmd = command.match(/(PLACE|MOVE|RIGHT|LEFT|REPORT)/)

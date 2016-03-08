@@ -20,14 +20,12 @@ class Simulator
     @commands_parser.parse.each do |command|
       @robot.execute(command)
     end
-
-    # surface.visualize(@robot)
   end
 
   private
 
   def validate_commands
     abort "No commands entered." if @commands.empty? || @commands == "\n"
-    abort "Invalid commands." unless @parser.commands_valid?
+    abort "Invalid commands." unless @commands_parser.commands_valid?
   end
 end
