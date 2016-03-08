@@ -74,6 +74,8 @@ class Robot
   end
 
   def report
-    puts "Robot final placement: " + [self.x_pose, self.y_pose, self.direction].join(",")
+    placement = [self.x_pose, self.y_pose, self.direction].join(",")
+    puts "Robot final placement: #{placement}"
+    placement
   end
 end
