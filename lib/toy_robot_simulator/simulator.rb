@@ -11,21 +11,16 @@ class Simulator
   end
 
   def run!
-    validate_commands
-
-    puts "Entered commands: #{@commands}"
-
-    # puts "Parsed commands: #{@commands_parser.parse}"
-
-    @commands_parser.parse.each do |command|
-      @robot.execute(command)
+    if @commands.empty? || @commands == "\n"
+      puts "No commands entered."
+    elsif !@commands_parser.commands_valid?
+      puts "Invalid commands."
+    else
+      puts "Entered commands: #{@commands}"
+      puts "Parsed commands: #{@commands_parser.parse}"
+      @commands_parser.parse.each do |command|
+        @robot.execute(command)
+      end
     end
-  end
-
-  private
-
-  def validate_commands
-    abort "No commands entered." if @commands.empty? || @commands == "\n"
-    abort "Invalid commands." unless @commands_parser.commands_valid?
   end
 end

@@ -6,6 +6,6 @@ class Surface
   end
 
   def move_available?(x,y)
-    x >= 0 && y >= 0 && @surface[x,y] == 0 ? true : false
+    x && y && x >= 0 && y >= 0 && @surface[x,y] == 0 ? true : false
   end
 end
