@@ -48,7 +48,7 @@ class Robot
       x = x - 1
     end
 
-    if x>=0 && y>=0 && @surface.move_available?(x,y)
+    if @surface.move_available?(x,y)
       self.x_pose,self.y_pose = x,y
     else
       puts "Cannot move there, trying next action."
@@ -74,6 +74,6 @@ class Robot
   end
 
   def report
-    puts [self.x_pose, self.y_pose, self.direction].join(",")
+    puts "Robot final placement: " + [self.x_pose, self.y_pose, self.direction].join(",")
   end
 end

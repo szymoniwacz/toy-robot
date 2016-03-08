@@ -9,11 +9,16 @@ else
   commands = gets
   puts File.read(File.dirname(__FILE__) + '/../README.md') if commands == 'help'
 end
+abort("No commands entered.") if commands.empty?
 
-abort("No command entered.") if commands.empty?
+puts "Entered commands: #{commands}"
 
-simulator = Simulator.new(commands)
+commands_parser = CommandsParser.new(commands)
+abort("Invalid commands.") unless commands_parser.commands_valid?
 
-abort("Invalid commands.") unless simulator.commands_valid?
+parsed_commands = commands_parser.parse
+puts "Parsed commands: #{parsed_commands}"
+
+simulator = Simulator.new(parsed_commands)
 
 simulator.run!

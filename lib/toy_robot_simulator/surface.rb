@@ -5,12 +5,8 @@ class Surface
     @surface = Matrix.zero(x,y)
   end
 
-  # def place_robot(x,y)
-  #   @surface.send(:[]=, x, y, "x")
-  # end
-
   def move_available?(x,y)
-    @surface[x,y] == 0 ? true : false
+    x >= 0 && y >= 0 && @surface[x,y] == 0 ? true : false
   end
 
   def visualize
@@ -26,5 +22,4 @@ class Surface
       print "#{row.join(" ")} \n"
     end
   end
-
 end
