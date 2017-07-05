@@ -14,7 +14,7 @@ Available commands are `PLACE X,Y,FACE`, `MOVE`, `LEFT`, `RIGHT`, `REPORT`.
 * `PLACE X,Y,FACE` defines first placement of robot and direction it is facing (NORTH, SOUTH, EAST, WEST).
 * `MOVE` tell robot to move forward in direction it is facing.
 * `LEFT` and `RIGHT` turns robot in specified direction without changing it's position.
-* `REPORT` will announce position od robot and direction it is facing.
+* `REPORT` will announce position of robot and direction it is facing.
 
 Robot cannot fall of the board so it will ignore every command leading to this.
 
