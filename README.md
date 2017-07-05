@@ -1,41 +1,75 @@
-# ToyRobotSimulator
+<!-- TODO: UPDATE README !!! -->
+<!-- Napisać jak można rozwinąc projekt itp itd -->
+<!-- Napisać jak zainstalować, jak uruchomic itp itd -->
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/toy_robot_simulator`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Toy Robot Simulator
 
-TODO: Delete this and the text above, and describe your gem
+* Application is a simulation of robot moving on square board.
+* Program accepts series of defined commands according to which robot is moving.
 
-## Installation
+## Available commands
 
-Add this line to your application's Gemfile:
+Available commands are `PLACE X,Y,FACE`, `MOVE`, `LEFT`, `RIGHT`, `REPORT`.
 
+* `PLACE X,Y,FACE` defines first placement of robot and direction it is facing (NORTH, SOUTH, EAST, WEST).
+* `MOVE` tell robot to move forward in direction it is facing.
+* `LEFT` and `RIGHT` turns robot in specified direction without changing it's position.
+* `REPORT` will announce position od robot and direction it is facing.
+
+Robot cannot fall of the board so it will ignore every command leading to this.
+
+Example of valid commands string:
 ```ruby
-gem 'toy_robot_simulator'
+PLACE 0,0,NORTH MOVE RIGHT MOVE MOVE RIGHT MOVE REPORT
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install toy_robot_simulator
+It will place robot in lower left corner of board, move it and final position is 2,0,SOUTH.
 
 ## Usage
 
-TODO: Write usage instructions here
+Application is using rvm (ruby-2.4.1)
 
-## Development
+* Clone this repo:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+git clone git@gitlab.com:kazenoshi/toy-robot.git
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Go to app folder
 
-## Contributing
+* Install bundler gem:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/toy_robot_simulator.
+```ruby
+gem install bundler
+```
 
+* Run application:
+
+```ruby
+ruby lib/toy_robot_simulator.rb
+```
+
+* Run tests:
+
+```ruby
+bundle exec rspec
+```
+
+* To excercise robot run:
+
+```ruby
+bundle exec rake exercise_robot
+```
+
+## Improvements
+
+Application is ready to be easily improved.
+For example:
+* Surface is a matrix and can take any dimensions.
+* There can be any number of obstacles on the table (like rocks, holes etc.).
+* Surface can be used by any number of robots at this same time.
+* This application can be a start to develop a simple game.
+* It is possible to add more commands and implement new behavior of robot.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
