@@ -6,8 +6,6 @@ class Simulator
   def initialize(commands = nil)
     @commands = commands
     @commands_parser = CommandsParser.new(@commands)
-    surface = Surface.new
-    @robot = Robot.new(surface)
   end
 
   def run!
@@ -16,6 +14,7 @@ class Simulator
     elsif !@commands_parser.commands_valid?
       puts "Invalid commands."
     else
+      @robot = Robot.new(Surface.new)
       puts "Entered commands: #{@commands}"
       puts "Parsed commands: #{@commands_parser.parse}"
       @commands_parser.parse.each do |command|
