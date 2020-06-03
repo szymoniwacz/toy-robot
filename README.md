@@ -1,7 +1,3 @@
-<!-- TODO: UPDATE README !!! -->
-<!-- Napisać jak można rozwinąc projekt itp itd -->
-<!-- Napisać jak zainstalować, jak uruchomic itp itd -->
-
 # Toy Robot Simulator
 
 * Application is a simulation of robot moving on square board.
@@ -31,7 +27,7 @@ Application is using rvm (ruby-2.4.1)
 * Clone this repo:
 
 ```ruby
-git clone git@gitlab.com:kazenoshi/toy-robot.git
+git clone git@github.com:szymoniwacz/toy-robot.git
 ```
 
 Go to app folder
